@@ -1,0 +1,22 @@
+{
+	"name": "brisk-admin",
+	"description": "Grant admin access to a Brisk application",
+	"version": "0.0.1",
+	"author": "makesites",
+	"contributors": [
+		{ "name": "Makis Tracend", "email": "makis@makesit.es" }
+	],
+	"homepage": "http://crudr.com",
+	"keywords": ["crudr", "crud", "api", "json"],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/brisk-modules/admin.git"
+	},
+	"engines": { "node": ">=0.8.x" },
+	"main": "index",
+	"bin": { },
+	"dependencies": {
+		"brisk": "0.x",
+		"underscore": "1.7.0"
+	}
+}
