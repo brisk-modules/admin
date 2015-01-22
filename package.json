@@ -17,6 +17,7 @@
 	"bin": { },
 	"dependencies": {
 		"brisk": "0.x",
+		"passport-publickey": "*",
 		"underscore": "1.7.0"
 	}
 }
