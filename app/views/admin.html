@@ -1,0 +1,21 @@
+<div class="main account">
+	<div class="content">
+		<h3></h3>
+		<div class="user-details"> {{#if admin.name}}
+			<p><strong>{{admin.name}}</strong></p>
+			{{/if}}
+			<p>{{admin.email}}</p>
+			<p>Member since: {{admin.created}}</p>
+		</div>
+
+		<ul class="menu">
+			<li><a href="{{site.url}}/admin/config">Configuration</a></li>
+			{{#eq admin.role 'master'}}
+			<li><a href="{{site.url}}/admin/manage">Manage Admins</a></li>
+			<li><a href="{{site.url}}/admin/register">Register Admin</a></li>
+			{{/eq}}
+		</ul>
+
+		<p><a href="/admin/delete/{{admin.id}}" class="delete-link btn btn-red">Delete Account</a></p>
+	</div>
+</div>
