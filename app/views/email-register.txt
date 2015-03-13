@@ -1,0 +1,14 @@
+Welcome Admin!
+
+You have now been assigned administration priviledges for {{site.name}} ({{site.url}})
+
+Your access level is: {{admin.role}}
+
+Please note down your password as this is the only time it will be broadcasted:
+
+{{admin.password}}
+
+If you have further questions you can email at: {{site.email}}
+
+Regards,
+The {{site.name}} robot
