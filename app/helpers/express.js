@@ -16,9 +16,18 @@ helper = Parent.extend({
 			res.locals.user.admin = true;
 		}
 		// add methods
-		req.isAuthenticated = req.isAuthenticated || function(){
+		req.isAdmin = req.isAdmin || function(){
 			return ( req.admin && !_.isEmpty( req.admin ) );
 		};
+		var isAuthenticated = ( req.isAuthenticated ) ? req.isAuthenticated : null;
+		// extend authenticated state
+		req.isAuthenticated = function(){
+			// original auth state
+			var auth = ( isAuthenticated ) ? isAuthenticated() : false;
+			if( auth ) return auth;
+			// fallback to admin
+			return req.isAdmin();
+		}
 		// continue...
 		next();
 	}
