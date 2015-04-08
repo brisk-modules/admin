@@ -10,7 +10,7 @@ var controller = Parent.extend({
 	name: "admin",
 
 	options: {
-		private: ["isAuthenticated"] // list of inaccessible methods
+		private: ["isAuthenticated", "onLogin"] // list of inaccessible methods
 	},
 
 	// display notifications
@@ -36,6 +36,7 @@ var controller = Parent.extend({
 		// prerequisite
 		if( this.isAuthenticated(req, res) ) return res.redirect("/admin");
 		// variables
+		var self = this;
 		var config = req.site.config;
 
 		switch( req.method ){
@@ -58,7 +59,11 @@ var controller = Parent.extend({
 					// redirect to dashboard
 					res.redirect("/admin");
 				});
-				// trigger onLogin event?
+
+				// trigger onLogin event (with latency, replace with throttling?)
+				setTimeout(function(){
+					self._onLogin(req, res);
+				}, 2000);
 
 			break;
 			default:
@@ -190,7 +195,23 @@ var controller = Parent.extend({
 
 	},
 
-	// Internal methods
+	// Events
+	// - when a user has successfullt logged in
+	onLogin: function(req, res){
+
+	},
+
+	// Internal
+
+	// - when a user has successfully logged in
+	_onLogin: function(req, res){
+		// make sure the user is still logged in
+		if( !this.isAuthenticated(req, res) ) return;
+		// custom events
+		this.onLogin(req, res);
+	},
+
+	// Private methods
 
 	// admin type authentication lookup
 	isAuthenticated: function (req, res){
