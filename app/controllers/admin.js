@@ -56,14 +56,15 @@ var controller = Parent.extend({
 						req.flash("error", err);
 						return res.redirect("/admin/login");
 					}
-					// redirect to dashboard
+					// FIX: set admin data...
+					req.admin = req.session.admin;
+					// trigger onLogin event
+					self._onLogin(req, res);
+
+					// redirect to dashboard (with some latency?)
 					res.redirect("/admin");
 				});
 
-				// trigger onLogin event (with latency, replace with throttling?)
-				setTimeout(function(){
-					self._onLogin(req, res);
-				}, 2000);
 
 			break;
 			default:
