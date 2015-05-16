@@ -1,7 +1,7 @@
 {
 	"name": "brisk-admin",
 	"description": "Grant admin access to a Brisk application",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"author": "makesites",
 	"contributors": [
 		{ "name": "Makis Tracend", "email": "makis@makesit.es" }
