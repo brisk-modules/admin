@@ -1,8 +1,9 @@
 <div class="main account">
 	<div class="content">
-		<h3></h3>
-		<div class="user-details"> {{#if admin.name}}
-			<p><strong>{{admin.name}}</strong></p>
+
+		<div class="user-details">
+			{{#if admin.name}}
+			<h3>{{admin.name}}</h3>
 			{{/if}}
 			<p>{{admin.email}}</p>
 			<p>Member since: {{formatDate admin.created}}</p>
@@ -16,6 +17,6 @@
 			{{/eq}}
 		</ul>
 
-		<p><a href="/admin/delete/{{admin.id}}" class="delete-link btn btn-red">Delete Account</a></p>
+		<p><a href="/admin/delete/{{admin.id}}" class="btn btn-caution delete">Delete Account</a></p>
 	</div>
 </div>
