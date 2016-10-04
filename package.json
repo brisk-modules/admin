@@ -6,13 +6,13 @@
 	"contributors": [
 		{ "name": "Makis Tracend", "email": "makis@makesit.es" }
 	],
-	"homepage": "http://crudr.com",
-	"keywords": ["crudr", "crud", "api", "json"],
+	"homepage": "http://github.com/brisk-modules/admin",
+	"keywords": ["brisk", "admin", "extension", "makesites"],
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/brisk-modules/admin.git"
 	},
-	"engines": { "node": ">=0.8.x" },
+	"engines": { "node": ">=0.12.x" },
 	"main": "index",
 	"bin": { },
 	"dependencies": {
