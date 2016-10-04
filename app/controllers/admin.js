@@ -18,7 +18,7 @@ var controller = Parent.extend({
 
 	index: function(req, res){
 		// index is accessible only to admins
-		if( !this.isAuthenticated(req, res) ) return res.redirect("/");
+		if( !this.isAuthenticated(req, res) ) return res.redirect("/admin/login");
 		// variables
 		var config = req.site.config;
 
@@ -69,7 +69,7 @@ var controller = Parent.extend({
 			break;
 			default:
 				// else redirect to the homepage
-				return res.redirect('/');
+				return res.redirect('/admin/login');
 			break;
 		}
 
@@ -77,7 +77,7 @@ var controller = Parent.extend({
 
 	config: function(req, res){
 		// index is accessible only to admins
-		if( !this.isAuthenticated(req, res) ) return res.redirect("/");
+		if( !this.isAuthenticated(req, res) ) return res.redirect("/admin/login");
 		// variables
 		var config = req.site.config;
 
