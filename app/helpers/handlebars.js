@@ -9,6 +9,7 @@ var helper = Parent.extend({
 		var Handlebars = this.hbs;
 
 		Handlebars.registerHelper('eq', this.eq);
+		Handlebars.registerHelper('formatDate', this.formatDate);
 
 		if( Parent.prototype.setup ) return Parent.prototype.setup.call( this );
 	},
@@ -20,7 +21,19 @@ var helper = Parent.extend({
 	*/
 	eq: function( a, b ){
 		return (a === b) ? arguments[arguments.length-1].fn() : "";
+	},
+
+	formatDate: function (time) {
+		// prerequisites
+		if( !time ) return "";
+		// variables
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var months_short = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+		var date = new Date(time);
+		var text = date.getDate() +" "+ months[ date.getMonth() ] +" "+ date.getFullYear();
+		return text;
 	}
+
 });
 
 
