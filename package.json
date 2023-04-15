@@ -17,7 +17,7 @@
 	"bin": { },
 	"dependencies": {
 		"async": "3.0.1",
-		"bcrypt": "3.0.6",
+		"bcrypt": "5.1.0",
 		"brisk": "1.x.x",
 		"hbs": "4.0.4",
 		"nodemailer": "6.2.1",
